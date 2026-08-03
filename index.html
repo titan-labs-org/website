@@ -3,60 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Titan Labs — Technical Leadership Consulting</title>
+  <title>Titan Labs</title>
   <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: "Lato", Helvetica, Arial, sans-serif;
+      font-size: 1.1rem;
       color: #111;
       background-color: #fff;
       line-height: 1.6;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     header {
       text-align: center;
-      padding: 80px 20px 40px 20px;
+      padding: 20px 20px 16px 20px;
+    }
+    header img {
+      display: block;
+      width: 160px;
+      max-width: 40vw;
+      margin: 0 auto 0.05rem auto;
     }
     h1 {
+      display: inline-block;
+      font-family: "Cinzel", serif;
       font-size: 2.4rem;
       font-weight: 600;
-      margin-bottom: 0.2rem;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+      margin: 0 0 0.05rem 0;
     }
-    h2 {
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #444;
+    header p {
+      line-height: 1.2;
+      margin: 0 auto;
+      text-align: center;
     }
     main {
       max-width: 720px;
+      width: 100%;
       margin: 0 auto;
-      padding: 0 20px 80px 20px;
+      padding: 0 20px 20px 20px;
+      box-sizing: border-box;
     }
-    p {
+    main p {
       margin: 0.8rem 0;
-    }
-    ul {
-      padding-left: 20px;
-      margin-top: 0.5rem;
-      margin-bottom: 1.2rem;
-    }
-    li {
-      margin-bottom: 0.4rem;
+      text-align: center;
     }
     strong {
       color: #000;
     }
-    hr {
-      border: none;
-      border-top: 1px solid #eee;
-      margin: 3rem 0;
+    #contact {
+      text-align: center;
+      margin-top: 1.5rem;
     }
     #contact a {
+      font-size: 80%;
       display: inline-block;
       max-width: 100%;
       color: #0056b3;
@@ -70,54 +79,27 @@
 </head>
 <body>
   <header>
+    <img src="logo.png" alt="Titan Labs logo">
     <h1>Titan Labs</h1>
-    <p><strong>Technical Leadership Consulting</strong></p>
   </header>
+  <script>
+    function syncHeaderWidths() {
+      var title = document.querySelector('header h1');
+      var w = title.getBoundingClientRect().width;
+      if (!w) return;
+      document.querySelector('header img').style.width = (w * 0.7) + 'px';
+      document.querySelector('header p').style.width = w + 'px';
+    }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(syncHeaderWidths);
+    }
+    window.addEventListener('load', syncHeaderWidths);
+    window.addEventListener('resize', syncHeaderWidths);
+  </script>
   <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>I help engineering organizations evolve from early growth to scalable maturity. My focus lies at the intersection of <strong>technical leadership, architecture, and organizational design</strong> - guiding teams as they move from experimentation to reliable execution. I combine engineering depth with strategic clarity to help founders and leaders make confident technical and organizational decisions under uncertainty.</p>
-    </section>
-
-    <section id="offer">
-      <h2>Offer</h2>
-      <p>
-        I provide targeted, high-impact consulting for startups and technology teams facing the challenges of rapid growth. 
-        My work brings structure and clarity to engineering organizations when scale, reliability, and communication begin to stretch existing systems.
-        I help teams:
-      </p>
-      <ul>
-        <li><strong>Clarify core problems</strong> and identify solutions that fit their specific context.</li>
-        <li>Reveal <strong>trade-offs and sources of uncertainty</strong> in strategic or technical decisions.</li>
-        <li>Translate complex ideas into <strong>clear, actionable language</strong> for both engineers and executives.</li>
-      </ul>
-    </section>
-
-    <section id="scope">
-      <h2>Scope</h2>
-      <ul>
-        <li><strong>Technical leadership</strong>strong> and organizational design for early-stage companies</li>
-        <li><strong>System architecture</strong>strong> and process scalability</li>
-        <li>Managing <strong>technical debt and reliability</strong> trade-offs</li>
-        <li><strong>Aligning</strong> business strategy with technical execution</li>
-        <li>Designing engineering career ladders and recruitment processes</li>
-        <li>Improving development velocity and deployment practices</li>
-      </ul>
-    </section>
-
-    <section id="cases">
-      <h2>Example Cases</h2>
-      <ul>
-        <li><strong>Startup CTO</strong> after a seed round - needs to scale the team fast while delivering a promised product.</li>
-        <li><strong>Senior engineer</strong> overwhelmed with competing priorities and unclear ownership.</li>
-        <li><strong>Newly promoted manager</strong> under delivery pressure without established team processes.</li>
-        <li><strong>CEO</strong> receiving complex customer feedback but lacking a bridge to engineering goals.</li>
-        <li><strong>Series B leadership team</strong> doubling headcount and seeking structure to prevent chaos.</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
+      <p>Titan Labs helps investors and founders understand what might go wrong in complex technical products deployed in markets that don't forgive a system going down.</p>
+      <p>Based on years of building teams and systems at early-stage ventures.</p>
+      <section id="contact">
       <a href="mailto:contact@titan-labs.dev">contact@titan-labs.dev</a>
     </section>
   </main>
